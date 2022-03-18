@@ -1,0 +1,18 @@
+{
+  "settings": {
+    "number_of_shards": 1,
+    "number_of_replicas": 1
+  },
+
+  "mappings": {
+    "properties": {
+      "criteria_facet": {
+        "type": "nested",
+        "properties": {
+          "criteria_name": { "type": "keyword"},
+          "criteria_value": { "type": "keyword"}
+        }
+      }
+    }
+  }
+}

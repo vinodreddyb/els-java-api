@@ -1,0 +1,35 @@
+{
+  "settings": {
+    "number_of_shards": 1,
+    "number_of_replicas": 1
+  },
+
+  "mappings": {
+    "properties": {
+      "id": {
+        "type": "keyword"
+      },
+      "SG_ID": {
+        "type": "keyword"
+      }
+    },
+    "dynamic_templates": [
+      {
+        "str_fields": {
+          "match": "SG_STR_*",
+          "runtime": {
+            "type": "keyword"
+          }
+        }
+      },
+      {
+        "result_fields": {
+          "match": "RESULT_*",
+          "runtime": {
+            "type": "keyword"
+          }
+        }
+      }
+    ]
+  }
+}
